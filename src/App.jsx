@@ -108,33 +108,73 @@ function App() {
         </div>
       </section>
 
-      {/* Transformation Section - MOVED UP */}
+      {/* Social Proof & Transformations */}
       <section className="section-padding bg-black">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4">
-            Prueba de que funciona
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Resultados Reales de Alumnos Reales
-          </h2>
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-            No son modelos. Son personas como tú que decidieron cambiar.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4">
+              Resultados que hablan solos
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ellos ya lo lograron. Tú sigues.
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Personas reales, resultados reales. Sin filtros, sin trucos — solo constancia con el programa.
+            </p>
+          </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          {/* Transformation Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
             <img src={`${BASE}photos/transform-woman-blue.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
             <img src={`${BASE}photos/transform-man-dramatic.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
             <img src={`${BASE}photos/transformation-face.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
             <img src={`${BASE}photos/transform-woman-black.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
           </div>
           
-          {/* Featured Testimonial */}
-          <div className="bg-gradient-to-r from-emerald-900/30 to-teal-900/30 rounded-2xl p-8 border border-emerald-500/30 max-w-2xl mx-auto">
-            <p className="text-4xl font-bold text-emerald-400 mb-2">-17 kilos</p>
-            <p className="text-xl text-gray-300 italic mb-4">
-              "De pesar 87 kilos bajé a 70 kilos y marqué todo mi cuerpo como jamás lo había hecho, ni de joven!"
-            </p>
-            <p className="text-gray-500">— José, 40 años</p>
+          {/* Featured Testimonials from Facebook */}
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-gradient-to-br from-emerald-900/30 to-zinc-900 rounded-2xl p-8 border border-emerald-500/30">
+              <p className="text-3xl font-bold text-emerald-400 mb-3">-17 kilos</p>
+              <p className="text-lg text-gray-300 italic mb-4">
+                "De pesar 87 kilos bajé a 70 kilos y marqué todo mi cuerpo como jamás lo había hecho, ni de joven!"
+              </p>
+              <p className="text-gray-500 font-medium">— José, 40 años</p>
+            </div>
+            <div className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+              <div className="flex items-center gap-1 text-yellow-400 mb-3">
+                {'★★★★★'.split('').map((star, j) => <span key={j}>{star}</span>)}
+              </div>
+              <p className="text-lg text-gray-300 italic mb-4">
+                "Dejé el programa hace un año y hoy estoy de vuelta, ya que no encontré ningún lugar que me diera los resultados que I GET FIT. El programa es completísimo y se adapta a tus necesidades."
+              </p>
+              <p className="text-gray-500 font-medium">— Tania P.</p>
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              { text: "Es el GYM que más me ha gustado. Realmente te hacen trabajar las partes problemáticas de tu cuerpo. En poco tiempo se ven resultados. Recomendación mil veces por encima de cualquier otro.", name: "Blanca P." },
+              { text: "El mejor en ejercicio en todos los aspectos: bajar de peso, fortalecer, rapidez, fuerza, potencia, explosividad... ¡así es!", name: "Javier I." },
+              { text: "100% recomendado. Los instructores te dan atención personalizada, te motivan y cambian tus hábitos. El ambiente es excelente.", name: "Luisa G." },
+            ].map((item, i) => (
+              <div key={i} className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800">
+                <div className="flex items-center gap-1 text-yellow-400 mb-3">
+                  {'★★★★★'.split('').map((star, j) => <span key={`${i}-${j}`}>{star}</span>)}
+                </div>
+                <p className="text-gray-300 italic mb-4">"{item.text}"</p>
+                <p className="text-sm text-emerald-400 font-semibold">— {item.name}</p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Facebook Reviews Proof */}
+          <div className="text-center">
+            <img 
+              src={`${BASE}photos/testimonials-fb.jpg`} 
+              alt="Reseñas verificadas en Facebook" 
+              className="rounded-2xl mx-auto max-w-3xl w-full border border-zinc-800"
+            />
+            <p className="text-gray-500 text-sm mt-4">+100 reseñas reales en Facebook · Promedio ★ 4.9</p>
           </div>
         </div>
       </section>
@@ -287,32 +327,24 @@ function App() {
       {/* More Testimonials */}
       <section className="section-padding bg-zinc-950">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Lo que dicen nuestros alumnos
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Historias de transformación
           </h2>
+          <p className="text-gray-400 mb-12">Cada historia empezó con un primer paso. El tuyo es hoy.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { text: "El mejor ejercicio en todos los aspectos, bajar de peso, fortalecer, rapidez, reflejos, potencia, explosividad... ¡así es!", name: "Javier I." },
+              { text: "El mejor programa de todos. Tiene todo lo que necesitas. Los diferentes tipos de programa están increíbles — te ayudan justo en la parte que más te cuesta bajar.", name: "Paloma E." },
               { text: "100% recomendable, tengo más de 1 año llevando el programa. Los cambios se ven rápidamente.", name: "Janneth H." },
-              { text: "Es el único lugar donde en realidad noté resultados y cambios en mi cuerpo. No lo pienses más!", name: "David C." },
+              { text: "Es el único lugar donde en realidad noté resultados y cambios en mi cuerpo. No lo pienses más, solo hazlo!", name: "David C." },
             ].map((item, i) => (
               <div key={i} className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 text-left">
                 <div className="flex items-center gap-1 text-yellow-400 mb-4">
-                  {'★★★★★'.split('').map((star, j) => <span key={j}>{star}</span>)}
+                  {'★★★★★'.split('').map((star, j) => <span key={`t2-${i}-${j}`}>{star}</span>)}
                 </div>
                 <p className="text-gray-300 italic mb-4">"{item.text}"</p>
                 <p className="text-sm text-emerald-400 font-semibold">— {item.name}</p>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-10">
-            <img 
-              src={`${BASE}photos/testimonials-fb.jpg`} 
-              alt="Testimonios de Facebook" 
-              className="rounded-2xl mx-auto max-w-3xl w-full border border-zinc-800"
-            />
-            <p className="text-gray-500 text-sm mt-4">+100 reseñas positivas en redes sociales</p>
           </div>
         </div>
       </section>
