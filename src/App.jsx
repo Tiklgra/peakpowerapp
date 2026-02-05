@@ -38,7 +38,7 @@ function App() {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
           <div className="inline-block bg-emerald-500/20 border border-emerald-500/50 rounded-full px-4 py-1 mb-6">
-            <span className="text-emerald-400 text-sm font-medium">🔥 Precio de lanzamiento — ¡Ahorra €19/mes!</span>
+            <span className="text-emerald-400 text-sm font-medium">🔥 +500 alumnos ya están transformando su cuerpo</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Pierde Peso <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Sin Gym</span>
@@ -70,7 +70,7 @@ function App() {
             CREAR PERFIL PARA EMPEZAR →
           </a>
           <p className="text-sm text-gray-500 mt-4">
-            <span className="text-gray-400 line-through">€49</span> <span className="text-white font-bold">€30 EUR/mes</span> · Cancela cuando quieras
+            <span className="text-white font-bold">€30 EUR/mes</span> · Cancela cuando quieras
           </p>
         </div>
         
@@ -367,18 +367,17 @@ function App() {
           <div className="bg-zinc-900 rounded-3xl p-8 md:p-12 border-2 border-emerald-500/50 mb-8 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-emerald-600 to-teal-600 py-2 px-4">
               <p className="text-sm font-bold text-white">
-                🔥 PRECIO DE LANZAMIENTO — Solo por tiempo limitado
+                🔥 EMPIEZA HOY — Cancela cuando quieras
               </p>
             </div>
             
             <div className="pt-6">
               <div className="flex items-baseline justify-center gap-3 mb-2">
-                <span className="text-2xl text-gray-500 line-through">€49</span>
                 <span className="text-5xl md:text-6xl font-bold text-white">€30</span>
                 <span className="text-gray-400">EUR / mes</span>
               </div>
               <p className="text-emerald-400 font-semibold mb-6">
-                ¡Ahorras €19 cada mes! 🎉
+                Tu transformación empieza aquí 💪
               </p>
               
               <div className="bg-zinc-800 rounded-lg p-3 mb-6 inline-block">
