@@ -23,7 +23,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <img src={LOGO} alt="Peak Power" className="h-8 md:h-10" />
           <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm md:text-base py-2 px-4 md:py-3 md:px-6">
-            EMPEZAR AHORA
+            CREAR PERFIL PARA EMPEZAR
           </a>
         </div>
       </nav>
@@ -44,12 +44,30 @@ function App() {
             Pierde Peso <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Sin Gym</span>
             <br />Desde Tu Casa
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
             Rutinas de 8 a 45 minutos que realmente funcionan. 
             Sin excusas, sin equipo especial, resultados reales.
           </p>
+          
+          <div className="flex items-center justify-center gap-4 md:gap-6 mb-8 text-sm md:text-base">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-black font-bold text-sm">1</span>
+              <span className="text-gray-300">Crea tu cuenta</span>
+            </div>
+            <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-black font-bold text-sm">2</span>
+              <span className="text-gray-300">Realiza el pago</span>
+            </div>
+            <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-black font-bold text-sm">3</span>
+              <span className="text-gray-300">¡Baja la app y a entrenar!</span>
+            </div>
+          </div>
+
           <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4 inline-block">
-            COMENZAR MI TRANSFORMACIÓN →
+            CREAR PERFIL PARA EMPEZAR →
           </a>
           <p className="text-sm text-gray-500 mt-4">
             <span className="text-gray-400 line-through">€49</span> <span className="text-white font-bold">€30 EUR/mes</span> · Cancela cuando quieras
@@ -174,7 +192,7 @@ function App() {
                 ))}
               </ul>
               <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary mt-8 inline-block">
-                QUIERO EMPEZAR →
+                CREAR PERFIL PARA EMPEZAR →
               </a>
             </div>
             <div className="relative">
@@ -390,7 +408,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-12 py-5 inline-block"
               >
-                COMENZAR MI TRANSFORMACIÓN →
+                CREAR PERFIL PARA EMPEZAR →
               </a>
               <p className="text-sm text-gray-500 mt-4">
                 Disponible en{' '}
@@ -456,7 +474,7 @@ function App() {
           rel="noopener noreferrer"
           className="btn-primary w-full text-center py-4 block"
         >
-          EMPEZAR AHORA — €30/mes
+          CREAR PERFIL — €30/mes
         </a>
       </div>
     </div>
