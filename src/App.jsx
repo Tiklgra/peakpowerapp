@@ -38,7 +38,7 @@ function App() {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
           <div className="inline-block bg-emerald-500/20 border border-emerald-500/50 rounded-full px-4 py-1 mb-6">
-            <span className="text-emerald-400 text-sm font-medium">🔥 +500 alumnos ya están transformando su cuerpo</span>
+            <span className="text-emerald-400 text-sm font-medium">🔥 Únete a quienes ya están transformando su cuerpo</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Pierde Peso <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Sin Gym</span>
@@ -215,7 +215,7 @@ function App() {
       <section className="section-padding bg-zinc-950">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            +500 personas ya lo están haciendo
+            Quienes lo probaron no vuelven atrás
           </h2>
           <p className="text-gray-400 mb-10">
             Y sus reseñas hablan por sí solas.
@@ -265,7 +265,7 @@ function App() {
                 Fundadora de IgetFIT y creadora de PeakPower App.
               </p>
               <p className="text-gray-300 mb-4">
-                Ha transformado a <span className="text-white font-semibold">cientos de personas</span> que pensaban que no podían. 
+                Ha transformado a <span className="text-white font-semibold">decenas de personas</span> que pensaban que no podían. 
                 Madres ocupadas, profesionistas sin tiempo, personas que odiaban el gym.
               </p>
               <p className="text-gray-400 italic mb-6">
@@ -273,7 +273,7 @@ function App() {
                 Para eso creé PeakPower."
               </p>
               <img src={`${BASE}photos/elena-event.jpg`} alt="Elena en evento" className="rounded-xl w-full" />
-              <p className="text-gray-500 text-sm mt-2">Eventos presenciales con miles de participantes</p>
+              <p className="text-gray-500 text-sm mt-2">Liderando eventos presenciales de fitness</p>
             </div>
           </div>
         </div>
@@ -345,7 +345,7 @@ function App() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-              <span><span className="text-white font-semibold">500+</span> alumnos activos ahora mismo</span>
+              <span>Alumnos activos entrenando cada semana</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-yellow-400">★ 4.9</span>
