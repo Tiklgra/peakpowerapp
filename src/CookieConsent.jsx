@@ -14,20 +14,29 @@ function loadClarity() {
   })(window, document, "clarity", "script", CLARITY_ID);
 }
 
+// Stop Clarity tracking
+function stopClarity() {
+  if (window.clarity) {
+    window.clarity('stop')
+  }
+}
+
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
   
   useEffect(() => {
     const consent = localStorage.getItem(CONSENT_KEY)
     
-    if (consent === 'accepted') {
-      // User already accepted - load Clarity
+    if (consent === 'declined') {
+      // User declined - don't load Clarity, don't show banner
+      setShowBanner(false)
+    } else if (consent === 'accepted') {
+      // User accepted - load Clarity, don't show banner
       loadClarity()
-    } else if (consent === 'declined') {
-      // User declined - don't show banner again
       setShowBanner(false)
     } else {
-      // No decision yet - show banner
+      // No decision yet - load Clarity immediately, show banner for opt-out option
+      loadClarity()
       setShowBanner(true)
     }
   }, [])
@@ -35,12 +44,13 @@ export default function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem(CONSENT_KEY, 'accepted')
     setShowBanner(false)
-    loadClarity()
+    // Clarity already running
   }
   
   const handleDecline = () => {
     localStorage.setItem(CONSENT_KEY, 'declined')
     setShowBanner(false)
+    stopClarity()
   }
   
   if (!showBanner) return null
