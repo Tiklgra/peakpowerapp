@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import CookieConsent from './CookieConsent'
 
 // Use BASE_URL for GitHub Pages compatibility
 const BASE = import.meta.env.BASE_URL
@@ -70,7 +71,7 @@ function App() {
             CREAR PERFIL PARA EMPEZAR →
           </a>
           <p className="text-sm text-gray-500 mt-4">
-            <span className="text-white font-bold">€30 EUR/mes</span> · Cancela cuando quieras
+            <span className="line-through text-gray-500">€39</span> <span className="text-white font-bold">€30/mes</span> · Oferta especial
           </p>
         </div>
         
@@ -88,11 +89,18 @@ function App() {
             Sabes que necesitas hacer algo.<br />
             <span className="text-gray-500">Pero siempre hay una excusa.</span>
           </h2>
-          <div className="max-w-2xl mx-auto space-y-6 text-lg md:text-xl text-gray-400 mt-10">
-            <p>"<span className="text-white">Mañana empiezo</span>" — y mañana nunca llega.</p>
-            <p>"<span className="text-white">No tengo tiempo</span>" — entre el trabajo, la casa y los hijos.</p>
-            <p>"<span className="text-white">El gym me intimida</span>" — la gente mirando, sin saber qué hacer.</p>
-            <p>"<span className="text-white">Ya intenté todo</span>" — dietas, apps gratis, videos de YouTube... nada funciona.</p>
+          <div className="max-w-2xl mx-auto grid gap-4 mt-10">
+            {[
+              { excuse: "Mañana empiezo", reality: "y mañana nunca llega." },
+              { excuse: "No tengo tiempo", reality: "entre el trabajo, la casa y los hijos." },
+              { excuse: "El gym me intimida", reality: "la gente mirando, sin saber qué hacer." },
+              { excuse: "Ya intenté todo", reality: "dietas, apps gratis, videos de YouTube... nada funciona." },
+            ].map((item, i) => (
+              <div key={i} className="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50 text-left">
+                <p className="text-white font-semibold text-lg md:text-xl mb-1">"{item.excuse}"</p>
+                <p className="text-gray-500 text-base">— {item.reality}</p>
+              </div>
+            ))}
           </div>
           <div className="mt-12 bg-zinc-900 rounded-2xl p-8 border border-zinc-800 max-w-2xl mx-auto">
             <p className="text-xl md:text-2xl text-white font-semibold">
@@ -106,37 +114,106 @@ function App() {
         </div>
       </section>
 
-      {/* ===== SECTION 2: TRANSFORMATIONS — Proof first ===== */}
+      {/* ===== SECTION 2: TRANSFORMATIONS — Visual Proof ===== */}
       <section className="section-padding bg-black">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4">
             La prueba está en los resultados
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Personas reales. Cambios reales.
           </h2>
+          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+            Cientos de transformaciones de alumnos que siguieron el programa
+          </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            <img src={`${BASE}photos/transform-woman-blue.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
-            <img src={`${BASE}photos/transform-man-dramatic.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
-            <img src={`${BASE}photos/transformation-face.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
-            <img src={`${BASE}photos/transform-woman-black.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+          {/* Transformation grid - clean, uniform */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <img src={`${BASE}photos/transform-woman-blue-4panel.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+            <img src={`${BASE}photos/transform-man-dramatic-suit.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+            <img src={`${BASE}photos/transform-woman-green-4panel.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+            <img src={`${BASE}photos/transform-woman-waterfall.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+            <img src={`${BASE}photos/transform-man-blue-4panel.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+            <img src={`${BASE}photos/transform-green-abs.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+            <img src={`${BASE}photos/transform-woman-black-4panel.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
+            <img src={`${BASE}photos/transform-elena-4panel.jpg`} alt="Transformación" className="rounded-xl w-full aspect-square object-cover hover:scale-105 transition-transform" />
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-6">
+      {/* ===== SECTION 2B: TESTIMONIALS — Social Proof ===== */}
+      <section className="section-padding bg-zinc-950">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4 text-center">
+            Mensajes reales de alumnos
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+            Lo que dicen quienes ya empezaron
+          </h2>
+          
+          {/* Featured testimonials - uniform cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { text: "De pesar 87 kilos bajé a 70 kilos y marqué todo mi cuerpo como jamás lo había hecho, ni de joven!", name: "José, 40 años" },
-              { text: "Dejé el programa hace un año y hoy estoy de vuelta. No encontré ningún lugar que me diera estos resultados. Es completísimo.", name: "Tania P." },
-              { text: "Tengo más de 1 año llevando el programa. Los cambios se ven rápidamente. Si lo estás pensando, no lo pienses más — hazlo.", name: "Janneth H." },
+              { 
+                text: "Tengo 52 años y estuve a punto de morir. Después de 3 intervenciones médicas, con lo que aprendí de Elena hoy me siento lleno de energía y ganas.", 
+                name: "Alumno, 52 años",
+                highlight: "Transformación de vida"
+              },
+              { 
+                text: "Me encanta tu app, hace mucho no tenía tanta constancia para entrenar. Acabo de terminar tu abs-challenge y me encantó. ¡Vamos por el six pack!", 
+                name: "Alumna de la app",
+                highlight: "Sobre la app"
+              },
+              { 
+                text: "Elena es muy buena como entrenadora, siempre está al pendiente que hagas las cosas bien. Conseguí muy buenos resultados en poco tiempo.", 
+                name: "Azucena",
+                highlight: "10 años entrenando"
+              },
             ].map((item, i) => (
-              <div key={i} className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 text-left flex flex-col">
-                <div className="flex items-center gap-1 text-yellow-400 mb-3">
-                  {'★★★★★'.split('').map((s, j) => <span key={`s1-${i}-${j}`}>{s}</span>)}
+              <div key={i} className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 flex flex-col">
+                <span className="inline-block bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full mb-4 self-start">
+                  {item.highlight}
+                </span>
+                <p className="text-gray-300 mb-4 flex-1 leading-relaxed">"{item.text}"</p>
+                <div className="flex items-center gap-2 pt-4 border-t border-zinc-800">
+                  <div className="flex items-center gap-1 text-yellow-400 text-sm">
+                    {'★★★★★'.split('').map((s, j) => <span key={`star-${i}-${j}`}>{s}</span>)}
+                  </div>
+                  <span className="text-gray-500 text-sm">— {item.name}</span>
                 </div>
-                <p className="text-gray-300 italic mb-4 flex-1">"{item.text}"</p>
-                <p className="text-sm text-gray-500 font-medium">— {item.name}</p>
               </div>
             ))}
+          </div>
+
+          {/* More testimonials - compact */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { text: "De pesar 87 kilos bajé a 70 kilos y marqué todo mi cuerpo como jamás lo había hecho, ni de joven!", name: "José, 40 años" },
+              { text: "Dejé el programa hace un año y hoy estoy de vuelta. No encontré ningún lugar que me diera estos resultados.", name: "Tania P." },
+              { text: "Los cambios se ven rápidamente. Si lo estás pensando, no lo pienses más — hazlo.", name: "Janneth H." },
+              { text: "Balance, superación, fuerza, mentalidad y voluntad. 100% recomendado.", name: "@chazca17" },
+            ].map((item, i) => (
+              <div key={i} className="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50">
+                <p className="text-gray-400 text-sm mb-3 leading-relaxed">"{item.text}"</p>
+                <p className="text-xs text-emerald-400 font-medium">— {item.name}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Trust badges */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-500">
+            <div className="flex items-center gap-2">
+              <span className="text-yellow-400">★ 4.9</span>
+              <span>de +100 reseñas</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+              <span>Alumnos activos cada semana</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-emerald-400">✓</span>
+              <span>+13 años de experiencia</span>
+            </div>
           </div>
         </div>
       </section>
@@ -147,25 +224,30 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4">
-                Tu nuevo plan
+                El programa
               </p>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 10 semanas que cambian todo
               </h2>
               <p className="text-gray-300 text-lg mb-4">
-                No es otro video de YouTube. Es un <span className="text-white font-semibold">sistema progresivo</span> diseñado 
-                por una coach con +13 años de experiencia — para que tu cuerpo cambie semana a semana.
+                Lo creé porque <span className="text-white font-semibold">yo viví lo mismo que tú</span> — quería bajar de peso 
+                pero siempre rebotaba o me aburría haciendo lo mismo. Cuando encontré qué funcionaba, lo convertí en este programa.
               </p>
-              <p className="text-gray-400 mb-8">
-                Empiezas con <span className="text-white">8 minutos</span> en la semana 0. Terminas haciendo sesiones de 
-                <span className="text-white"> 45 minutos</span> de máximo rendimiento. HIIT, cardio, fuerza — todo incluido.
+              <p className="text-gray-400 mb-6">
+                Es <span className="text-white">progresivo</span>: empiezas con 8 minutos y vas subiendo hasta 45. 
+                Mezcla HIIT, pliométricos, ejercicios por zonas problema. Si no puedes completar una sesión, 
+                la repites hasta que te salga — sin presión, a tu ritmo.
+              </p>
+              <p className="text-gray-400 mb-8 italic border-l-2 border-emerald-500 pl-4">
+                "En cada video explico los ejercicios como si estuviera tomando la clase contigo. 
+                No eres un número — te acompaño en cada sesión."
               </p>
               <div className="space-y-4">
                 {[
-                  { icon: '🏠', text: 'Desde tu sala, tu cuarto, o donde sea — solo necesitas un tapete' },
-                  { icon: '⏱️', text: 'Rutinas de 8 a 45 min — tú decides cuándo y cuánto' },
-                  { icon: '🥗', text: 'Recetas fáciles incluidas — no más "¿qué como?"' },
-                  { icon: '📱', text: 'En tu celular (iOS + Android) o desde el navegador' },
+                  { icon: '🏠', text: 'Desde tu sala — solo necesitas un tapete' },
+                  { icon: '📈', text: 'Progresivo: cada semana te retas a más' },
+                  { icon: '🎯', text: 'Ejercicios específicos para zonas problema' },
+                  { icon: '🥗', text: 'Recetas fáciles incluidas' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="text-2xl">{item.icon}</span>
@@ -176,8 +258,8 @@ function App() {
             </div>
             <div className="relative">
               <img 
-                src={`${BASE}photos/app-mockup-phones.jpg`} 
-                alt="PeakPower App" 
+                src={`${BASE}photos/app-devices-clean.jpg`} 
+                alt="PeakPower App en todos tus dispositivos" 
                 className="w-full rounded-2xl"
               />
             </div>
@@ -187,60 +269,46 @@ function App() {
 
       {/* ===== SECTION 4: WHY THIS IS DIFFERENT ===== */}
       <section className="section-padding bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ¿Por qué PeakPower funciona<br />cuando todo lo demás falla?
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+            ¿Por qué funciona?
           </h2>
-          <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
-            Porque no te pide que cambies tu vida. Se adapta a ella.
+          <p className="text-gray-400 mb-10 text-center max-w-xl mx-auto">
+            No te pide que cambies tu vida. Se adapta a ella.
           </p>
           
-          <div className="grid md:grid-cols-2 gap-6 text-left">
+          <div className="space-y-4">
             {[
-              { bad: 'El gym te pide 1-2 horas con traslado', good: 'PeakPower: 8-45 min sin salir de casa' },
-              { bad: 'YouTube no tiene estructura ni progresión', good: 'PeakPower: 10 semanas progresivas, paso a paso' },
-              { bad: 'Un trainer cuesta €150-300/mes', good: 'PeakPower: €30/mes — programa completo + recetas' },
-              { bad: 'Las apps gratis no te motivan ni dan seguimiento', good: 'PeakPower: programa guiado por coach profesional' },
+              { icon: '🏠', before: 'Gym: 1-2 horas con traslado', after: '8-45 min desde tu casa' },
+              { icon: '📋', before: 'YouTube: videos sin estructura', after: '10 semanas progresivas' },
+              { icon: '💰', before: 'Trainer: €150-300/mes', after: '€30/mes todo incluido' },
+              { icon: '🎯', before: 'Apps gratis: sin guía real', after: 'Coach profesional que te acompaña' },
             ].map((item, i) => (
-              <div key={i} className="bg-zinc-900 rounded-xl p-5 border border-zinc-800">
-                <p className="text-gray-500 text-sm line-through mb-2">{item.bad}</p>
-                <p className="text-white font-medium">{item.good}</p>
+              <div key={i} className="flex items-center gap-4 bg-zinc-900/50 rounded-2xl p-4 md:p-5">
+                <span className="text-3xl">{item.icon}</span>
+                <div className="flex-1 grid md:grid-cols-2 gap-2 md:gap-8">
+                  <div className="flex items-center gap-2">
+                    <span className="text-red-400 text-lg">✗</span>
+                    <span className="text-gray-500 text-sm md:text-base">{item.before}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-emerald-400 text-lg">✓</span>
+                    <span className="text-white text-sm md:text-base font-medium">{item.after}</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 5: SOCIAL PROOF — More testimonials + Facebook ===== */}
-      <section className="section-padding bg-zinc-950">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Quienes lo probaron no vuelven atrás
-          </h2>
-          <p className="text-gray-400 mb-10">
-            Y sus reseñas hablan por sí solas.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {[
-              { text: "Es el lugar donde realmente noté resultados y cambios en mi cuerpo. Te hacen trabajar las partes problemáticas. Recomendación mil veces.", name: "Blanca P." },
-              { text: "El mejor en ejercicio en todos los aspectos: bajar de peso, fortalecer, rapidez, fuerza, potencia, explosividad... ¡así es!", name: "Javier I." },
-              { text: "100% recomendado. Te dan atención personalizada, te motivan y cambian tus hábitos. El ambiente es excelente.", name: "Luisa G." },
-            ].map((item, i) => (
-              <div key={i} className="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 text-left flex flex-col">
-                <div className="flex items-center gap-1 text-yellow-400 mb-3">
-                  {'★★★★★'.split('').map((s, j) => <span key={`s2-${i}-${j}`}>{s}</span>)}
-                </div>
-                <p className="text-gray-300 italic mb-4 flex-1">"{item.text}"</p>
-                <p className="text-sm text-emerald-400 font-semibold">— {item.name}</p>
-              </div>
-            ))}
-          </div>
-
+      {/* ===== SECTION 5: FACEBOOK REVIEWS ===== */}
+      <section className="py-12 bg-zinc-950">
+        <div className="max-w-3xl mx-auto px-4 text-center">
           <img 
             src={`${BASE}photos/testimonials-fb.jpg`} 
             alt="Reseñas de Facebook" 
-            className="rounded-2xl mx-auto max-w-3xl w-full border border-zinc-800"
+            className="rounded-2xl mx-auto w-full border border-zinc-800"
           />
           <p className="text-gray-500 text-sm mt-4">+100 reseñas verificadas en Facebook · ★ 4.9 promedio</p>
         </div>
@@ -250,8 +318,9 @@ function App() {
       <section className="section-padding bg-black">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img src={`${BASE}photos/elena-abs.jpg`} alt="Elena - Coach" className="rounded-2xl w-full" />
+            <div className="space-y-4">
+              <img src={`${BASE}photos/elena-transformation.jpg`} alt="Elena - Transformación" className="rounded-2xl w-full" />
+              <p className="text-center text-gray-500 text-sm">Mi propia transformación — yo también empecé desde cero</p>
             </div>
             <div>
               <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4">
@@ -265,7 +334,11 @@ function App() {
                 Fundadora de IgetFIT y creadora de PeakPower App.
               </p>
               <p className="text-gray-300 mb-4">
-                Ha transformado a <span className="text-white font-semibold">decenas de personas</span> que pensaban que no podían. 
+                <span className="text-white font-semibold">Yo también pasé por esto.</span> Sé lo que es empezar sin saber nada, 
+                sentir que nada funciona, y no ver resultados. Por eso creé este programa.
+              </p>
+              <p className="text-gray-300 mb-4">
+                He transformado a <span className="text-white font-semibold">cientos de personas</span> que pensaban que no podían. 
                 Madres ocupadas, profesionistas sin tiempo, personas que odiaban el gym.
               </p>
               <p className="text-gray-400 italic mb-6">
@@ -275,6 +348,57 @@ function App() {
               <img src={`${BASE}photos/elena-event.jpg`} alt="Elena en evento" className="rounded-xl w-full" />
               <p className="text-gray-500 text-sm mt-2">Liderando eventos presenciales de fitness</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SECTION: HOW IT WORKS ===== */}
+      <section className="section-padding bg-black">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+            ¿Cómo funciona?
+          </h2>
+          <p className="text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+            Empezar es más fácil de lo que crees. En 3 pasos estás entrenando.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { 
+                step: '1', 
+                title: 'Crea tu perfil', 
+                desc: 'Regístrate y elige tu plan. Tienes acceso inmediato a todo el contenido.',
+                icon: '📱'
+              },
+              { 
+                step: '2', 
+                title: 'Empieza en Semana 0', 
+                desc: 'Rutinas de solo 8 minutos para que tu cuerpo se adapte. Sin presión.',
+                icon: '🎯'
+              },
+              { 
+                step: '3', 
+                title: 'Sigue el programa', 
+                desc: 'Cada semana sube la intensidad. Si no puedes completar una sesión, la repites.',
+                icon: '📈'
+              },
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">{item.icon}</span>
+                </div>
+                <div className="inline-flex items-center justify-center w-8 h-8 bg-emerald-500 text-black font-bold rounded-full mb-3">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-gray-500 mb-4">¿Dudas? En cada video te explico los ejercicios paso a paso.</p>
+            <p className="text-emerald-400 font-semibold">Es como tener una clase privada conmigo.</p>
           </div>
         </div>
       </section>
@@ -298,13 +422,16 @@ function App() {
             </div>
             
             <div className="pt-8">
-              {/* Price Anchor */}
-              <p className="text-gray-500 text-sm mb-2">Un entrenador personal cobra €150-300/mes. PeakPower te da:</p>
+              {/* FOMO Price */}
+              <div className="inline-block bg-red-500/20 border border-red-500/50 rounded-full px-4 py-1 mb-4">
+                <span className="text-red-400 text-sm font-semibold">🔥 OFERTA ESPECIAL — Precio normal: €39/mes</span>
+              </div>
               <div className="flex items-baseline justify-center gap-3 mb-2">
+                <span className="text-gray-500 text-2xl line-through">€39</span>
                 <span className="text-5xl md:text-6xl font-bold text-white">€30</span>
                 <span className="text-gray-400">EUR / mes</span>
               </div>
-              <p className="text-emerald-400 font-semibold mb-2">Menos de €1 al día.</p>
+              <p className="text-emerald-400 font-semibold mb-2">Menos de €1 al día — Ahorras €108/año</p>
               <p className="text-gray-500 text-sm mb-8">Menos que un café. Más que cualquier gym.</p>
             
               <ul className="text-left max-w-md mx-auto space-y-3 mb-8">
@@ -313,7 +440,7 @@ function App() {
                   'Rutinas progresivas — de 8 a 45 minutos',
                   'Recetas saludables fáciles y rápidas',
                   'App disponible en iOS, Android y Web',
-                  'Sin contrato — cancela en cualquier momento',
+                  'Sin contrato — cancela cuando quieras por email',
                   'Acceso inmediato al crear tu cuenta',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -369,7 +496,7 @@ function App() {
               { q: '¿Necesito equipo especial?', a: 'No. Solo un tapete de ejercicio (o incluso una toalla). Las rutinas están diseñadas 100% para hacer en casa sin nada más.' },
               { q: '¿Y si soy principiante total?', a: 'Perfecto. El programa empieza en semana 0 con solo 8 minutos. Está diseñado para que cualquier persona pueda empezar, sin importar su nivel.' },
               { q: '¿Cuánto tiempo tengo que dedicar al día?', a: 'Desde 8 minutos (semana 0) hasta 45 minutos (semana 10). Tú controlas el ritmo. No necesitas horas — necesitas consistencia.' },
-              { q: '¿Puedo cancelar cuando quiera?', a: 'Sí, sin permanencia, sin penalización, sin preguntas. Cancelas desde la app en cualquier momento.' },
+              { q: '¿Puedo cancelar cuando quiera?', a: 'Sí, sin permanencia y sin penalización. Solo envía un correo a peakpower@te-tp.com solicitando la cancelación y listo.' },
               { q: '¿Incluye plan de alimentación?', a: 'Sí. Incluye recetas saludables, fáciles y rápidas de preparar. Porque el ejercicio sin alimentación es solo la mitad del camino.' },
               { q: '¿Y si ya intenté otros programas y no funcionaron?', a: 'La mayoría de programas no tienen estructura progresiva. Este sí: empieza donde estás y sube gradualmente. Por eso personas que fracasaron en otros lados tienen éxito aquí.' },
             ].map((item, i) => (
@@ -385,7 +512,7 @@ function App() {
           
           {/* Final push */}
           <div className="text-center mt-12">
-            <p className="text-gray-400 mb-6">¿Lista para empezar?</p>
+            <p className="text-gray-400 mb-6">¿Empezamos?</p>
             <a 
               href="https://peak-power.passion.io/checkout/125893" 
               target="_blank"
@@ -425,9 +552,12 @@ function App() {
           rel="noopener noreferrer"
           className="btn-primary w-full text-center py-4 block"
         >
-          CREAR PERFIL — €30/mes
+          OFERTA €30/mes (antes €39)
         </a>
       </div>
+
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
     </div>
   )
 }
