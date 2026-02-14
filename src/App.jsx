@@ -23,9 +23,12 @@ function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <img src={LOGO} alt="Peak Power" className="h-8 md:h-10" />
-          <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm md:text-base py-2 px-4 md:py-3 md:px-6">
-            CREAR PERFIL PARA EMPEZAR
-          </a>
+          <div className="flex flex-col items-center">
+            <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm md:text-base py-3 px-5 md:py-4 md:px-8">
+              CREA PERFIL Y QUEMA GRASA
+            </a>
+            <span className="text-xs mt-1"><span className="line-through text-gray-500">€39</span> <span className="text-emerald-400 font-bold">€30/mes</span></span>
+          </div>
         </div>
       </nav>
 
@@ -38,8 +41,8 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
-          <div className="inline-block bg-emerald-500/20 border border-emerald-500/50 rounded-full px-4 py-1 mb-6">
-            <span className="text-emerald-400 text-sm font-medium">🔥 Únete a quienes ya están transformando su cuerpo</span>
+          <div className="inline-block bg-emerald-500/20 border border-emerald-500/50 rounded-full px-4 py-2 mb-6">
+            <span className="text-emerald-400 text-sm font-medium">🔥 +500 personas ya cambiaron su cuerpo en 90 días</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Pierde Peso <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Sin Gym</span>
@@ -67,11 +70,11 @@ function App() {
             </div>
           </div>
 
-          <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-4 inline-block">
-            CREAR PERFIL PARA EMPEZAR →
+          <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-10 py-5 inline-block">
+            CREA PERFIL Y QUEMA GRASA DESDE CASA →
           </a>
-          <p className="text-sm text-gray-500 mt-4">
-            <span className="line-through text-gray-500">€39</span> <span className="text-white font-bold">€30/mes</span> · Oferta especial
+          <p className="text-sm mt-4">
+            <span className="line-through text-gray-500">€39</span> <span className="text-white font-bold">Solo €30/mes</span>
           </p>
         </div>
         
@@ -121,10 +124,13 @@ function App() {
             La prueba está en los resultados
           </p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Personas reales. Cambios reales.
+            +500 personas ya cambiaron su cuerpo
           </h2>
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-            Cientos de transformaciones de alumnos que siguieron el programa
+          <p className="text-gray-400 mb-4 max-w-2xl mx-auto">
+            Transformaciones reales de alumnos que siguieron el programa
+          </p>
+          <p className="text-emerald-400 font-semibold mb-10">
+            ✓ Resultados garantizados en 90 días
           </p>
           
           {/* Transformation grid - clean, uniform */}
@@ -456,7 +462,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-12 py-5 inline-block"
               >
-                CREAR PERFIL PARA EMPEZAR →
+                CREA PERFIL Y QUEMA GRASA DESDE CASA →
               </a>
               
               <p className="text-sm text-gray-500 mt-6">
@@ -517,10 +523,13 @@ function App() {
               href="https://peak-power.passion.io/checkout/125893" 
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-lg px-10 py-4 inline-block"
+              className="btn-primary text-lg px-10 py-5 inline-block"
             >
-              CREAR PERFIL PARA EMPEZAR →
+              CREA PERFIL Y QUEMA GRASA DESDE CASA →
             </a>
+            <p className="text-sm mt-3">
+              <span className="line-through text-gray-500">€39</span> <span className="text-emerald-400 font-bold">Solo €30/mes</span>
+            </p>
           </div>
         </div>
       </section>
@@ -550,9 +559,9 @@ function App() {
           href="https://peak-power.passion.io/checkout/125893" 
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary w-full text-center py-4 block"
+          className="btn-primary w-full text-center py-5 block text-base"
         >
-          OFERTA €30/mes (antes €39)
+          QUEMA GRASA · <span className="line-through opacity-70">€39</span> Solo €30/mes
         </a>
       </div>
 
