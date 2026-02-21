@@ -3,15 +3,20 @@ import { useState, useEffect } from 'react'
 const CLARITY_ID = 'vc7a87vjsf'
 const CONSENT_KEY = 'peakpower_cookie_consent'
 
-// Load Microsoft Clarity
+// Load Microsoft Clarity with error handling
 function loadClarity() {
   if (window.clarity) return // Already loaded
   
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", CLARITY_ID);
+  try {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      t.onerror = function() { console.log('Clarity blocked or failed to load'); };
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", CLARITY_ID);
+  } catch (e) {
+    console.log('Clarity initialization failed:', e);
+  }
 }
 
 // Stop Clarity tracking
