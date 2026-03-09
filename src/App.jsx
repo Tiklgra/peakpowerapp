@@ -19,66 +19,79 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      {/* Navigation - Simplified */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           <img src={LOGO} alt="Peak Power" className="h-8 md:h-10" />
-          <div className="flex flex-col items-center">
-            <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm md:text-base py-3 px-5 md:py-4 md:px-8">
-              CREA PERFIL Y QUEMA GRASA
-            </a>
-            <span className="text-xs mt-1"><span className="line-through text-gray-500">€39</span> <span className="text-emerald-400 font-bold">€30/mes</span></span>
-          </div>
+          <a href="https://buy.stripe.com/fZe8Al4RW9ERbdK7su" target="_blank" rel="noopener noreferrer" className="bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm py-2 px-4 rounded-lg transition-colors">
+            €30/mes →
+          </a>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Mobile Optimized */}
+      <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-20 md:pt-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
         
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
-          <div className="inline-block bg-emerald-500/20 border border-emerald-500/50 rounded-full px-4 py-2 mb-6">
-            <span className="text-emerald-400 text-sm font-medium">🔥 +500 personas ya cambiaron su cuerpo en 90 días</span>
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-4 md:pt-20">
+          {/* Social Proof - TOP */}
+          <div className="inline-block bg-emerald-500/20 border border-emerald-500/50 rounded-full px-4 py-2 mb-4">
+            <span className="text-emerald-400 text-sm font-medium">🔥 +500 transformaciones en 90 días</span>
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          
+          {/* Headline - Compact */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
             Pierde Peso <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Sin Gym</span>
             <br />Desde Tu Casa
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
-            Rutinas de 8 a 45 minutos que realmente funcionan. 
-            Sin excusas, sin equipo especial, resultados reales.
-          </p>
           
-          <div className="flex items-center justify-center gap-4 md:gap-6 mb-8 text-sm md:text-base">
-            <div className="flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-black font-bold text-sm">1</span>
-              <span className="text-gray-300">Crea tu cuenta</span>
+          {/* 3 Icons - Quick Value Props */}
+          <div className="flex items-center justify-center gap-6 md:gap-8 mb-6 text-sm">
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-2xl">⏱️</span>
+              <span className="text-gray-300">8-45 min/día</span>
             </div>
-            <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-            <div className="flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-black font-bold text-sm">2</span>
-              <span className="text-gray-300">Realiza el pago</span>
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-2xl">🏠</span>
+              <span className="text-gray-300">Sin equipo</span>
             </div>
-            <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-            <div className="flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-black font-bold text-sm">3</span>
-              <span className="text-gray-300">¡Baja la app y a entrenar!</span>
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-2xl">✅</span>
+              <span className="text-gray-300">en 90 días</span>
             </div>
           </div>
 
-          <a href="https://peak-power.passion.io/checkout/125893" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-10 py-5 inline-block">
-            CREA PERFIL Y QUEMA GRASA DESDE CASA →
+          {/* Main CTA - Full Width on Mobile */}
+          <a href="https://buy.stripe.com/fZe8Al4RW9ERbdK7su" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg md:text-xl px-8 py-5 w-full md:w-auto md:px-12 block md:inline-block font-bold">
+            EMPEZAR AHORA · Solo €30/mes
           </a>
-          <p className="text-sm mt-4">
-            <span className="line-through text-gray-500">€39</span> <span className="text-white font-bold">Solo €30/mes</span>
+          <p className="text-xs text-gray-500 mt-2 mb-6">
+            <span className="line-through">€69</span> — Sin permanencia, cancela cuando quieras
           </p>
+          
+          {/* Mini Testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto mb-4">
+            <div className="bg-zinc-900/80 rounded-xl p-4 border border-zinc-800/50 text-left">
+              <p className="text-gray-300 text-sm mb-2">"De 87 kilos bajé a 70 y marqué todo mi cuerpo como jamás lo había hecho."</p>
+              <p className="text-xs font-medium"><span className="text-emerald-400">— José, 40 años</span> <span className="text-yellow-400">★★★★★</span></p>
+            </div>
+            <div className="bg-zinc-900/80 rounded-xl p-4 border border-zinc-800/50 text-left">
+              <p className="text-gray-300 text-sm mb-2">"Dejé el programa hace un año y hoy estoy de vuelta. No encontré nada mejor."</p>
+              <p className="text-xs font-medium"><span className="text-emerald-400">— Tania P.</span> <span className="text-yellow-400">★★★★★</span></p>
+            </div>
+            <div className="bg-zinc-900/80 rounded-xl p-4 border border-zinc-800/50 text-left hidden md:block">
+              <p className="text-gray-300 text-sm mb-2">"Los cambios se ven rápidamente. Si lo estás pensando, no lo pienses más — hazlo."</p>
+              <p className="text-xs font-medium"><span className="text-emerald-400">— Janneth H.</span> <span className="text-yellow-400">★★★★★</span></p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs">★ 4.9 de +100 reseñas · +13 años de experiencia</p>
         </div>
         
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
           <svg className="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -201,7 +214,7 @@ function App() {
             ].map((item, i) => (
               <div key={i} className="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50">
                 <p className="text-gray-400 text-sm mb-3 leading-relaxed">"{item.text}"</p>
-                <p className="text-xs text-emerald-400 font-medium">— {item.name}</p>
+                <p className="text-xs font-medium"><span className="text-emerald-400">— {item.name}</span> <span className="text-yellow-400">★★★★★</span></p>
               </div>
             ))}
           </div>
@@ -305,18 +318,6 @@ function App() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ===== SECTION 5: FACEBOOK REVIEWS ===== */}
-      <section className="py-12 bg-zinc-950">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <img 
-            src={`${BASE}photos/testimonials-fb.jpg`} 
-            alt="Reseñas de Facebook" 
-            className="rounded-2xl mx-auto w-full border border-zinc-800"
-          />
-          <p className="text-gray-500 text-sm mt-4">+100 reseñas verificadas en Facebook · ★ 4.9 promedio</p>
         </div>
       </section>
 
@@ -430,10 +431,10 @@ function App() {
             <div className="pt-8">
               {/* FOMO Price */}
               <div className="inline-block bg-red-500/20 border border-red-500/50 rounded-full px-4 py-1 mb-4">
-                <span className="text-red-400 text-sm font-semibold">🔥 OFERTA ESPECIAL — Precio normal: €39/mes</span>
+                <span className="text-red-400 text-sm font-semibold">🔥 OFERTA ESPECIAL — Precio normal: €69/mes</span>
               </div>
               <div className="flex items-baseline justify-center gap-3 mb-2">
-                <span className="text-gray-500 text-2xl line-through">€39</span>
+                <span className="text-gray-500 text-2xl line-through">€69</span>
                 <span className="text-5xl md:text-6xl font-bold text-white">€30</span>
                 <span className="text-gray-400">EUR / mes</span>
               </div>
@@ -457,7 +458,7 @@ function App() {
               </ul>
               
               <a 
-                href="https://peak-power.passion.io/checkout/125893" 
+                href="https://buy.stripe.com/fZe8Al4RW9ERbdK7su" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-12 py-5 inline-block"
@@ -520,7 +521,7 @@ function App() {
           <div className="text-center mt-12">
             <p className="text-gray-400 mb-6">¿Empezamos?</p>
             <a 
-              href="https://peak-power.passion.io/checkout/125893" 
+              href="https://buy.stripe.com/fZe8Al4RW9ERbdK7su" 
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-lg px-10 py-5 inline-block"
@@ -528,7 +529,7 @@ function App() {
               CREA PERFIL Y QUEMA GRASA DESDE CASA →
             </a>
             <p className="text-sm mt-3">
-              <span className="line-through text-gray-500">€39</span> <span className="text-emerald-400 font-bold">Solo €30/mes</span>
+              <span className="line-through text-gray-500">€69</span> <span className="text-emerald-400 font-bold">Solo €30/mes</span>
             </p>
           </div>
         </div>
@@ -556,12 +557,12 @@ function App() {
       {/* Sticky Mobile CTA */}
       <div className={`fixed bottom-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-t border-zinc-800 p-4 transition-transform duration-300 md:hidden ${showStickyCTA ? 'translate-y-0' : 'translate-y-full'}`}>
         <a 
-          href="https://peak-power.passion.io/checkout/125893" 
+          href="https://buy.stripe.com/fZe8Al4RW9ERbdK7su" 
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary w-full text-center py-5 block text-base"
         >
-          QUEMA GRASA · <span className="line-through opacity-70">€39</span> Solo €30/mes
+          QUEMA GRASA · <span className="line-through opacity-70">€69</span> Solo €30/mes
         </a>
       </div>
 
