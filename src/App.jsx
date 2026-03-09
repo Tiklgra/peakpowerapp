@@ -130,6 +130,56 @@ function App() {
         </div>
       </section>
 
+
+      {/* ===== SECTION 3: SOLUTION — What they get ===== */}
+      <section className="section-padding bg-zinc-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4">
+                El programa
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                10 semanas que cambian todo
+              </h2>
+              <p className="text-gray-300 text-lg mb-4">
+                Lo creé porque <span className="text-white font-semibold">yo viví lo mismo que tú</span> — quería bajar de peso 
+                pero siempre rebotaba o me aburría haciendo lo mismo. Cuando encontré qué funcionaba, lo convertí en este programa.
+              </p>
+              <p className="text-gray-400 mb-6">
+                Es <span className="text-white">progresivo</span>: empiezas con 8 minutos y vas subiendo hasta 45. 
+                Mezcla HIIT, pliométricos, ejercicios por zonas problema. Si no puedes completar una sesión, 
+                la repites hasta que te salga — sin presión, a tu ritmo.
+              </p>
+              <p className="text-gray-400 mb-8 italic border-l-2 border-emerald-500 pl-4">
+                "En cada video explico los ejercicios como si estuviera tomando la clase contigo. 
+                No eres un número — te acompaño en cada sesión."
+              </p>
+              <div className="space-y-4">
+                {[
+                  { icon: '🏠', text: 'Desde tu sala — solo necesitas un tapete' },
+                  { icon: '📈', text: 'Progresivo: cada semana te retas a más' },
+                  { icon: '🎯', text: 'Ejercicios específicos para zonas problema' },
+                  { icon: '🥗', text: 'Recetas fáciles incluidas' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="text-gray-300">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src={`${BASE}photos/app-devices-clean.jpg`} 
+                alt="PeakPower App en todos tus dispositivos" 
+                className="w-full rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== SECTION 2: TRANSFORMATIONS — Visual Proof ===== */}
       <section className="section-padding bg-black">
         <div className="max-w-6xl mx-auto text-center">
@@ -236,56 +286,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* ===== SECTION 3: SOLUTION — What they get ===== */}
-      <section className="section-padding bg-zinc-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-emerald-400 font-semibold uppercase tracking-widest mb-4">
-                El programa
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                10 semanas que cambian todo
-              </h2>
-              <p className="text-gray-300 text-lg mb-4">
-                Lo creé porque <span className="text-white font-semibold">yo viví lo mismo que tú</span> — quería bajar de peso 
-                pero siempre rebotaba o me aburría haciendo lo mismo. Cuando encontré qué funcionaba, lo convertí en este programa.
-              </p>
-              <p className="text-gray-400 mb-6">
-                Es <span className="text-white">progresivo</span>: empiezas con 8 minutos y vas subiendo hasta 45. 
-                Mezcla HIIT, pliométricos, ejercicios por zonas problema. Si no puedes completar una sesión, 
-                la repites hasta que te salga — sin presión, a tu ritmo.
-              </p>
-              <p className="text-gray-400 mb-8 italic border-l-2 border-emerald-500 pl-4">
-                "En cada video explico los ejercicios como si estuviera tomando la clase contigo. 
-                No eres un número — te acompaño en cada sesión."
-              </p>
-              <div className="space-y-4">
-                {[
-                  { icon: '🏠', text: 'Desde tu sala — solo necesitas un tapete' },
-                  { icon: '📈', text: 'Progresivo: cada semana te retas a más' },
-                  { icon: '🎯', text: 'Ejercicios específicos para zonas problema' },
-                  { icon: '🥗', text: 'Recetas fáciles incluidas' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-gray-300">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={`${BASE}photos/app-devices-clean.jpg`} 
-                alt="PeakPower App en todos tus dispositivos" 
-                className="w-full rounded-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ===== SECTION 4: WHY THIS IS DIFFERENT ===== */}
       <section className="section-padding bg-black">
         <div className="max-w-4xl mx-auto">
