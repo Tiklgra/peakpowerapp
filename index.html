@@ -45,8 +45,8 @@
         var href = target.getAttribute('href') || '';
         var text = target.textContent || '';
         
-        // Fire InitiateCheckout for CTA clicks (Kajabi checkout links or "Empieza" buttons)
-        if (href.includes('kajabi') || href.includes('checkout') || 
+        // Fire InitiateCheckout for CTA clicks (checkout links or "Empieza" buttons)
+        if (href.includes('stripe') || href.includes('checkout') || href.includes('buy') ||
             text.toLowerCase().includes('empieza') || text.toLowerCase().includes('empezar') ||
             target.classList.contains('cta') || target.closest('.cta')) {
           if (typeof fbq !== 'undefined') {
