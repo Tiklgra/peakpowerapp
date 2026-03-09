@@ -56,7 +56,7 @@
         
         if (isCheckoutLink || isCtaText || isCtaStyle) {
           if (typeof fbq !== 'undefined') {
-            fbq('trackCustom', 'ClickedCheckout');
+            fbq('trackCustom', 'CTAClick', {button: text.substring(0, 50)});
           }
           // Delay navigation slightly to ensure pixel fires
           if (target.tagName === 'A' && target.href) {
