@@ -33,5 +33,28 @@
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- InitiateCheckout Event on CTA clicks -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track clicks on CTA buttons (links containing checkout/kajabi URLs or "Empieza" text)
+      document.body.addEventListener('click', function(e) {
+        var target = e.target.closest('a, button');
+        if (!target) return;
+        
+        var href = target.getAttribute('href') || '';
+        var text = target.textContent || '';
+        
+        // Fire InitiateCheckout for CTA clicks (Kajabi checkout links or "Empieza" buttons)
+        if (href.includes('kajabi') || href.includes('checkout') || 
+            text.toLowerCase().includes('empieza') || text.toLowerCase().includes('empezar') ||
+            target.classList.contains('cta') || target.closest('.cta')) {
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'InitiateCheckout');
+          }
+        }
+      });
+    });
+    </script>
   </body>
 </html>
