@@ -48,6 +48,7 @@
         // Fire InitiateCheckout for CTA clicks (checkout links or CTA buttons)
         if (href.includes('stripe') || href.includes('checkout') || href.includes('buy') ||
             text.toLowerCase().includes('empieza') || text.toLowerCase().includes('empezar') ||
+            text.toLowerCase().includes('crea perfil') || text.toLowerCase().includes('quema grasa') ||
             text.includes('$30') || text.includes('€30') || text.includes('/mes') ||
             target.classList.contains('cta') || target.closest('.cta')) {
           if (typeof fbq !== 'undefined') {
