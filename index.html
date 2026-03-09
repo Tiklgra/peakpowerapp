@@ -55,10 +55,8 @@
                         target.closest('[class*="button"]') || target.closest('[class*="btn"]');
         
         if (isCheckoutLink || isCtaText || isCtaStyle) {
-          console.log('InitiateCheckout fired!', {href, text, isCheckoutLink, isCtaText, isCtaStyle});
           if (typeof fbq !== 'undefined') {
-            fbq('track', 'InitiateCheckout');
-            console.log('fbq InitiateCheckout sent');
+            fbq('trackCustom', 'ClickedCheckout');
           }
           // Delay navigation slightly to ensure pixel fires
           if (target.tagName === 'A' && target.href) {
