@@ -101,7 +101,7 @@ function App() {
       {/* ===== SECTION 1: PAIN — Mirror their inner dialogue ===== */}
       <section className="section-padding bg-zinc-950">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-2xl md:text-5xl font-bold mb-6 leading-tight">
             Sabes que necesitas hacer algo.<br />
             <span className="text-gray-500">Pero siempre hay una excusa.</span>
           </h2>
