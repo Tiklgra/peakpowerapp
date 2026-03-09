@@ -37,20 +37,24 @@
     <!-- InitiateCheckout Event on CTA clicks -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Track clicks on CTA buttons (links containing checkout/kajabi URLs or "Empieza" text)
       document.body.addEventListener('click', function(e) {
         var target = e.target.closest('a, button');
         if (!target) return;
         
-        var href = target.getAttribute('href') || '';
-        var text = target.textContent || '';
+        var href = (target.getAttribute('href') || '').toLowerCase();
+        var text = (target.textContent || '').toLowerCase();
         
-        // Fire InitiateCheckout for CTA clicks (checkout links or CTA buttons)
-        if (href.includes('stripe') || href.includes('checkout') || href.includes('buy') ||
-            text.toLowerCase().includes('empieza') || text.toLowerCase().includes('empezar') ||
-            text.toLowerCase().includes('crea perfil') || text.toLowerCase().includes('quema grasa') ||
-            text.includes('$30') || text.includes('€30') || text.includes('/mes') ||
-            target.classList.contains('cta') || target.closest('.cta')) {
+        // Fire InitiateCheckout for ALL checkout/CTA buttons
+        var isCheckoutLink = href.includes('stripe') || href.includes('checkout') || 
+                            href.includes('buy') || href.includes('pay') || href.includes('subscribe');
+        var isCtaText = text.includes('empieza') || text.includes('empezar') || 
+                       text.includes('crea perfil') || text.includes('quema grasa') ||
+                       text.includes('ahora') || text.includes('comenzar') ||
+                       text.includes('$') || text.includes('€') || text.includes('/mes');
+        var isCtaStyle = target.classList.contains('cta') || target.closest('.cta') ||
+                        target.closest('[class*="button"]') || target.closest('[class*="btn"]');
+        
+        if (isCheckoutLink || isCtaText || isCtaStyle) {
           if (typeof fbq !== 'undefined') {
             fbq('track', 'InitiateCheckout');
           }
