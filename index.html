@@ -58,6 +58,13 @@
           if (typeof fbq !== 'undefined') {
             fbq('track', 'InitiateCheckout');
           }
+          // Delay navigation slightly to ensure pixel fires
+          if (target.tagName === 'A' && target.href) {
+            e.preventDefault();
+            setTimeout(function() {
+              window.location.href = target.href;
+            }, 300);
+          }
         }
       });
     });
