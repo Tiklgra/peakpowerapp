@@ -35,7 +35,7 @@ function App() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black" />
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-4 md:pt-20">
           {/* Social Proof - TOP */}
