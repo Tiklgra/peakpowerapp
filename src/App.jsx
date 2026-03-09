@@ -24,7 +24,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           <img src={LOGO} alt="Peak Power" className="h-8 md:h-10" />
           <a href="https://buy.stripe.com/fZe8Al4RW9ERbdK7su" target="_blank" rel="noopener noreferrer" className="bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm py-2 px-4 rounded-lg transition-colors">
-            €30/mes →
+            $30/mes →
           </a>
         </div>
       </nav>
@@ -67,10 +67,10 @@ function App() {
 
           {/* Main CTA - Full Width on Mobile */}
           <a href="https://buy.stripe.com/fZe8Al4RW9ERbdK7su" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg md:text-xl px-8 py-5 w-full md:w-auto md:px-12 block md:inline-block font-bold">
-            EMPEZAR AHORA · Solo €30/mes
+            EMPEZAR AHORA · Solo $30/mes
           </a>
           <p className="text-xs text-gray-500 mt-2 mb-6">
-            <span className="line-through">€69</span> — Sin permanencia, cancela cuando quieras
+            <span className="line-through">$69</span> — Sin permanencia, cancela cuando quieras
           </p>
           
           {/* Mini Testimonials */}
@@ -300,7 +300,7 @@ function App() {
             {[
               { icon: '🏠', before: 'Gym: 1-2 horas con traslado', after: '8-45 min desde tu casa' },
               { icon: '📋', before: 'YouTube: videos sin estructura', after: '10 semanas progresivas' },
-              { icon: '💰', before: 'Trainer: €150-300/mes', after: '€30/mes todo incluido' },
+              { icon: '💰', before: 'Trainer: $150-300/mes', after: '$30/mes todo incluido' },
               { icon: '🎯', before: 'Apps gratis: sin guía real', after: 'Coach profesional que te acompaña' },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 bg-zinc-900/50 rounded-2xl p-4 md:p-5">
@@ -431,14 +431,14 @@ function App() {
             <div className="pt-8">
               {/* FOMO Price */}
               <div className="inline-block bg-red-500/20 border border-red-500/50 rounded-full px-4 py-1 mb-4">
-                <span className="text-red-400 text-sm font-semibold">🔥 OFERTA ESPECIAL — Precio normal: €69/mes</span>
+                <span className="text-red-400 text-sm font-semibold">🔥 OFERTA ESPECIAL — Precio normal: $69/mes</span>
               </div>
               <div className="flex items-baseline justify-center gap-3 mb-2">
-                <span className="text-gray-500 text-2xl line-through">€69</span>
-                <span className="text-5xl md:text-6xl font-bold text-white">€30</span>
+                <span className="text-gray-500 text-2xl line-through">$69</span>
+                <span className="text-5xl md:text-6xl font-bold text-white">$30</span>
                 <span className="text-gray-400">EUR / mes</span>
               </div>
-              <p className="text-emerald-400 font-semibold mb-2">Menos de €1 al día — Ahorras €108/año</p>
+              <p className="text-emerald-400 font-semibold mb-2">Menos de $1 al día — Ahorras $108/año</p>
               <p className="text-gray-500 text-sm mb-8">Menos que un café. Más que cualquier gym.</p>
             
               <ul className="text-left max-w-md mx-auto space-y-3 mb-8">
@@ -529,7 +529,7 @@ function App() {
               CREA PERFIL Y QUEMA GRASA DESDE CASA →
             </a>
             <p className="text-sm mt-3">
-              <span className="line-through text-gray-500">€69</span> <span className="text-emerald-400 font-bold">Solo €30/mes</span>
+              <span className="line-through text-gray-500">$69</span> <span className="text-emerald-400 font-bold">Solo $30/mes</span>
             </p>
           </div>
         </div>
@@ -562,7 +562,7 @@ function App() {
           rel="noopener noreferrer"
           className="btn-primary w-full text-center py-5 block text-base"
         >
-          QUEMA GRASA · <span className="line-through opacity-70">€69</span> Solo €30/mes
+          QUEMA GRASA · <span className="line-through opacity-70">$69</span> Solo $30/mes
         </a>
       </div>
 
