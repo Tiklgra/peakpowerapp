@@ -44,26 +44,28 @@
         pointer-events: auto !important;
       }
       
-      /* Make cookie banner compact on mobile */
+      /* Make cookie banner compact on mobile — single row */
       @media (max-width: 768px) {
         .z-\[100\].fixed.bottom-0 {
-          padding: 10px 12px !important;
+          padding: 8px 10px !important;
         }
-        .z-\[100\].fixed.bottom-0 .flex-1 p:last-child {
+        .z-\[100\].fixed.bottom-0 .flex-1 {
           display: none !important;
         }
-        .z-\[100\].fixed.bottom-0 .flex-1 p:first-child {
-          margin-bottom: 0 !important;
-          font-size: 12px !important;
-        }
         .z-\[100\].fixed.bottom-0 .gap-3 button {
-          padding: 6px 12px !important;
-          font-size: 12px !important;
+          padding: 5px 10px !important;
+          font-size: 11px !important;
         }
         .z-\[100\].fixed.bottom-0 > div {
           flex-direction: row !important;
           align-items: center !important;
-          gap: 8px !important;
+          gap: 6px !important;
+        }
+        .z-\[100\].fixed.bottom-0 > div::before {
+          content: "🍪 Cookies" !important;
+          color: #fff !important;
+          font-size: 12px !important;
+          white-space: nowrap !important;
         }
       }
     </style>
