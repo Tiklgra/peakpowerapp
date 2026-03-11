@@ -30,9 +30,62 @@
     <!-- Microsoft Clarity - loaded after cookie consent via React -->
     <script type="module" crossorigin src="/assets/index-B6_7r1sp.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-pMdy2i0R.css">
+    
+    <!-- Cookie Banner Override: compact + delayed -->
+    <style>
+      /* Hide cookie banner initially, show after delay via JS */
+      .cookie-hidden { display: none !important; }
+      
+      /* Make cookie banner compact on mobile */
+      @media (max-width: 768px) {
+        div.fixed.bottom-0.z-\[100\] {
+          padding: 10px 12px !important;
+        }
+        div.fixed.bottom-0.z-\[100\] .flex-1 p:last-child {
+          display: none !important; /* Hide long description on mobile */
+        }
+        div.fixed.bottom-0.z-\[100\] .flex-1 p:first-child {
+          margin-bottom: 0 !important;
+          font-size: 12px !important;
+        }
+        div.fixed.bottom-0.z-\[100\] .flex.gap-3 {
+          width: auto !important;
+        }
+        div.fixed.bottom-0.z-\[100\] .flex.gap-3 button {
+          padding: 6px 12px !important;
+          font-size: 12px !important;
+        }
+        div.fixed.bottom-0.z-\[100\] > div {
+          flex-direction: row !important;
+          align-items: center !important;
+          gap: 8px !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     
+    <!-- Delay cookie banner by 3 seconds -->
+    <script>
+    (function() {
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(m) {
+          m.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1 && node.classList && node.classList.contains('fixed') && 
+                node.textContent && node.textContent.includes('cookies')) {
+              node.classList.add('cookie-hidden');
+              setTimeout(function() {
+                node.classList.remove('cookie-hidden');
+              }, 3000);
+            }
+          });
+        });
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+      // Stop observing after 10s
+      setTimeout(function() { observer.disconnect(); }, 10000);
+    })();
+    </script>
   </body>
 </html>
