@@ -33,29 +33,34 @@
     
     <!-- Cookie Banner Override: compact + delayed -->
     <style>
-      /* Hide cookie banner initially, show after delay via JS */
-      .cookie-hidden { display: none !important; }
+      /* Hide cookie banner initially via CSS, JS removes this after 3s */
+      .z-\[100\].fixed.bottom-0 {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.3s ease !important;
+      }
+      .z-\[100\].fixed.bottom-0.cookie-show {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+      }
       
       /* Make cookie banner compact on mobile */
       @media (max-width: 768px) {
-        div.fixed.bottom-0.z-\[100\] {
+        .z-\[100\].fixed.bottom-0 {
           padding: 10px 12px !important;
         }
-        div.fixed.bottom-0.z-\[100\] .flex-1 p:last-child {
-          display: none !important; /* Hide long description on mobile */
+        .z-\[100\].fixed.bottom-0 .flex-1 p:last-child {
+          display: none !important;
         }
-        div.fixed.bottom-0.z-\[100\] .flex-1 p:first-child {
+        .z-\[100\].fixed.bottom-0 .flex-1 p:first-child {
           margin-bottom: 0 !important;
           font-size: 12px !important;
         }
-        div.fixed.bottom-0.z-\[100\] .flex.gap-3 {
-          width: auto !important;
-        }
-        div.fixed.bottom-0.z-\[100\] .flex.gap-3 button {
+        .z-\[100\].fixed.bottom-0 .gap-3 button {
           padding: 6px 12px !important;
           font-size: 12px !important;
         }
-        div.fixed.bottom-0.z-\[100\] > div {
+        .z-\[100\].fixed.bottom-0 > div {
           flex-direction: row !important;
           align-items: center !important;
           gap: 8px !important;
@@ -66,26 +71,16 @@
   <body>
     <div id="root"></div>
     
-    <!-- Delay cookie banner by 3 seconds -->
+    <!-- Show cookie banner after 3 second delay -->
     <script>
-    (function() {
-      function findAndDelayCookieBanner() {
-        var divs = document.querySelectorAll('div.fixed.bottom-0');
-        for (var i = 0; i < divs.length; i++) {
-          var el = divs[i];
-          if (el.textContent && el.textContent.includes('cookies')) {
-            el.style.display = 'none';
-            setTimeout(function() { el.style.display = ''; }, 3000);
-            return true;
-          }
+    setTimeout(function() {
+      var divs = document.querySelectorAll('div.fixed.bottom-0');
+      for (var i = 0; i < divs.length; i++) {
+        if (divs[i].textContent && divs[i].textContent.includes('cookies')) {
+          divs[i].classList.add('cookie-show');
         }
-        return false;
       }
-      var attempts = 0;
-      var interval = setInterval(function() {
-        if (findAndDelayCookieBanner() || ++attempts > 20) clearInterval(interval);
-      }, 200);
-    })();
+    }, 3000);
     </script>
   </body>
 </html>
